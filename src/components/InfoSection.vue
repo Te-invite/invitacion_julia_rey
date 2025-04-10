@@ -1,6 +1,6 @@
 <script>
-import Titulo from './TitleSection.vue';
-import Boton from './Boton.vue';
+import Titulo from '../components/utils/TitleSection.vue';
+import Boton from '../components/utils/Boton.vue';
 export default {
     name: 'InfoSection',
     components: {

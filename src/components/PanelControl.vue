@@ -1,6 +1,6 @@
 <script>
 import { inject } from 'vue';
-import Boton from './Boton.vue';
+import Boton from './utils/Boton.vue';
 export default {
     name:'PanelControl',
     components:{

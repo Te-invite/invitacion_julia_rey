@@ -11,7 +11,7 @@ export default {
 <template>
     <div id="dias" class="section__timer" >
         <div class="countdown">
-            <Counter :year="2025" :month="3" :date="29" :hour="20" :minute="30" :second="0" :millisecond="31" />
+            <Counter :year="2025" :month="3" :date="29" :hour="0" :minute="0" :second="0" :millisecond="31" />
         </div>
     </div>
 </template>

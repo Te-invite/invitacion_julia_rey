@@ -1,5 +1,5 @@
 <script>
-import Boton from '../Boton.vue';
+import Boton from '../utils/Boton.vue';
 import Swal from 'sweetalert2';
 import PopupBase from './PopupBase.vue';
 
@@ -18,8 +18,7 @@ export default {
             isAttending: '',
             nombre: '',
             informacionAdicional: '',
-            errorMessage: '',
-            adicional:'en caso de lluvia se reprograma.'
+            errorMessage: ''
         }
     },
     methods: {
@@ -35,7 +34,7 @@ export default {
             }
 
             const mensaje = `*Asistencia:* ${this.isAttending === 'yes' ? 'Si' : 'No'}\n *Nombre:* ${this.nombre}\n *Cantidad de acompañantes:* ${this.numMembers}\n *Información adicional:* ${this.informacionAdicional}`;
-            const telefono ='2983415331';
+            const telefono ='';
             const enlaceWhatsApp = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
 
             Swal.fire({

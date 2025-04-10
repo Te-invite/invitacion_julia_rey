@@ -8,8 +8,8 @@ import Lugar from '../components/Lugar.vue';
 import DressCode from '../components/DressCode.vue';
 import Regalo from '../components/Regalo.vue';
 import Musica from '../components/Musica.vue';
-import Footer from '../components/Footer.vue';
-import BotonAudio from '../components/BotonAudio.vue';
+import Footer from '../components/utils/Footer.vue';
+import BotonAudio from '../components/utils/BotonAudio.vue';
 export default {
     name:'Invitacion',
     components:{

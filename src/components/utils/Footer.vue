@@ -1,6 +1,6 @@
 <script>
-import logo from '../assets/img/logo.svg';
-import Separador3 from '../components/Separador3.vue';
+import logo from '../../assets/img/logo.svg';
+import Separador3 from '../Separador3.vue';
 export default {
     name:'Footer',
     data(){
