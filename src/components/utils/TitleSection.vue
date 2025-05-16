@@ -31,7 +31,7 @@ export default {
     color:var(--font-primary-color);
     font-style: italic;
     font-weight: normal;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-align: center;
 }
 

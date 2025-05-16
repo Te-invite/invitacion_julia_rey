@@ -1,6 +1,7 @@
 <script>
-import InfoSection from './InfoSection.vue';
-import popupAsistire from './popup/PopAsistire.vue'
+import InfoSection from '../utils/InfoSection.vue';
+import popupAsistire from '../popup/PopAsistire.vue'
+import Boton from '../utils/Boton.vue'
 export default {
     name: 'Asistencia',
     data() {
@@ -29,22 +30,19 @@ export default {
         <popupAsistire v-show="popup" @close="togglePopUp()"/>
 
         <InfoSection
-            :title="title"
-            :subtitle="subtitle"
-            :mainText="dia"
-            :texts="[confirmacion]"
-            buttonLabel="CONFIRMAR ASISTENCIA"
-            containerClass="container__asistencia"
-            textClass="text_asistencia"
-            buttonClass="btn-mayor"
-            :buttonClick="togglePopUp"
+        title=""
+        :subtitle="title"
+        :mainText="dia"
+        buttonLabel="Confirmar asistencia"
+        :confirmationText="confirmacion" 
+        buttonClass="btn-mayor"
+        :buttonClick="togglePopUp"
+            
         />
     </div>
+    
 </template>
 <style>
-.container__asistencia{
-    margin-bottom: 10%;
-}
 </style>
 
 

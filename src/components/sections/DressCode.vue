@@ -1,5 +1,5 @@
 <script>
-import InfoSection from '../components/InfoSection.vue';
+import InfoSection from '../utils/InfoSection.vue';
 export default {
     name: 'DressCode',
     components: {

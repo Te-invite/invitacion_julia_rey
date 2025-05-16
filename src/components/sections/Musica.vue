@@ -1,5 +1,5 @@
 <script>
-import InfoSection from '../components/InfoSection.vue';
+import InfoSection from '../utils/InfoSection.vue';
 import Swal from 'sweetalert2';
 export default {
     name: 'DressCode',
@@ -27,7 +27,7 @@ export default {
             }).then((result) => {
                 if (result.isConfirmed) {
                     // Si el usuario presiona "OK"
-                    window.open("https://youtube.com/playlist?list=PL4WV8HJeFYo8II59kQI10Ul4vLJX3BG_9&si=Ac47sF_U8mw7zczs");
+                    window.open("https://goo.su/UK4pB");
                 } else if (result.dismiss === Swal.DismissReason.cancel) {
                     // Si el usuario presiona "Cancelar", cierra el popup de SweetAlert
                     this.togglePopUp();
@@ -44,7 +44,7 @@ export default {
         title="Música" 
         subtitle="musica" 
         :texts="[text]" 
-        buttonLabel="SUGERIR CANCIÓN"
+        buttonLabel="Sugerir Canción"
         containerClass="container__musica" 
         textClass="text_musica" 
         buttonClass="btn-mayor"

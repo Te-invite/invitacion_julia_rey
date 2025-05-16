@@ -1,6 +1,6 @@
 <script>
-import Nombre from './Nombre.vue';
-import Frases from './Frases.vue';
+import Nombre from '../Nombre.vue';
+import Frases from '../Frases.vue';
 export default {
     name:'SectionPresent',
     components:{

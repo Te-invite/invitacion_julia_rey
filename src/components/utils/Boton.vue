@@ -21,15 +21,15 @@ export default{
 </template>
 <style>
 .btn-mayor{
-    width: 270px;
-    height: 60px;
+    width: 200px;       
+    min-height: 48px;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 8px;
     color:var(--color_btn);
     border: 1px solid var(--font-primary-color);
     background: transparent;
-    padding: .75rem 1.5rem;
-    font-weight: normal;
-    border-radius: 10px;
-    font-size: .8rem;
+    font-weight: 400;
 }
 .btn-mayor:hover{
   background: var(--font-primary-color);

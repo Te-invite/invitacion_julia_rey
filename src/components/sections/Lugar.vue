@@ -1,5 +1,5 @@
 <script>
-import InfoSection from '../components/InfoSection.vue';
+import InfoSection from '../utils/InfoSection.vue';
 import Swal from 'sweetalert2';
 export default {
     name: 'Lugar',
@@ -44,7 +44,7 @@ export default {
             subtitle="Lugar"
             :mainText="salon"
             :texts="[direccion]"
-            buttonLabel="¿CÓMO LLEGAR?"
+            buttonLabel="¿Cómo Llegar?"
             containerClass="container__lugar"
             textClass="text_lugar"
             buttonClass="btn-mayor"

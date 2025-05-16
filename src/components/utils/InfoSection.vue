@@ -1,13 +1,13 @@
 <script>
-import Titulo from '../components/utils/TitleSection.vue';
-import Boton from '../components/utils/Boton.vue';
+import Titulo from './TitleSection.vue';
+import Boton from './Boton.vue';
 export default {
     name: 'InfoSection',
     components: {
         Titulo,
         Boton
     },
-    props: {
+   props: {
         title: {
             type: String,
             required: true
@@ -32,6 +32,10 @@ export default {
             type:Function,
             default:()=>{}
         },
+        confirmationText: {  // Nueva prop específica para la confirmación
+            type: String,
+            default: ''
+        },
         containerClass: {
             type: String,
             default: 'container__info'
@@ -49,103 +53,129 @@ export default {
 </script>
 <template>
     <div :class="containerClass" class="container-info">
-        <Titulo :title="title" :subtitle="subtitle" />
+        <Titulo v-if="title" :title="title" :subtitle="subtitle" />
+        
+        <!-- Muestra el subtítulo como título principal si no hay título -->
+        <h1 v-else-if="subtitle" class="main-title">{{ subtitle }}</h1>
+        
+        
         <span :class="textClass" class="span-info">
-            <h2 v-if="mainText" class="mainText"><strong>{{ mainText }}</strong></h2>
+            <h2 v-if="mainText" class="mainText" v-html="mainText"></h2>
             <h3 v-for="(text, index) in texts" 
                 :key="index" 
                 class="subText"
                 v-html="text">
             </h3>
         </span>
+        
         <div class="button-container">
-            <Boton v-if="buttonLabel" :label="buttonLabel" customClass="btn-mayor" @click="buttonClick" />
+            <Boton v-if="buttonLabel" :label="buttonLabel" :customClass="buttonClass" @click="buttonClick" />
+            <p v-if="confirmationText" class="confirmation-text">{{ confirmationText }}</p>
+            <slot name="buttons"></slot> <!-- 💥 ACÁ AGREGAMOS EL SLOT -->
         </div>
+
     </div>
 </template>
 
 
 <style>
 .container__info {
-    width: 100%;
+    width: var(--section);
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    
+    width: 100%;
+    margin:2rem 0;
 }
 
 .text_info {
     text-align: center;
-    width: 300px;
+    width: 100%;
     height: auto;
 }
 .span-info{
-    width:250px;
+    width:var(--section);
     text-align: center;
-    margin-bottom: 10px;
+    
+}
+.mainText{
+    font-size: 20px;
+    font-family:var(--font-subtitle);
+}
+span h2,
+.subText,
+.confirmation-text{
+    font-family:var(--font-subtitle);
 }
 span h2{
-    font-family: 'Recoleta-Medium';
-    font-size: 1.5rem;
-    color: var(--font-secondary-dark);
-    font-weight: 100;
-    line-height: normal;
-    text-align: center;
-    font-size: 1rem;
-}
-.subText{
-    font-family: 'Recoleta';
-    font-size: 1rem;
+    font-size:var(--subtitle_h2);
     color: var(--font-primary-color);
     font-weight: 100;
     line-height: normal;
     text-align: center;
+}
+.subText{
     font-size: 1rem;
+    color: var( --font-primary-color);
+    font-weight: 100;
+    line-height: normal;
+    text-align: center;
 }
 .button-container{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    margin-top: 5px;
+    width: 100%;
+}
+.main-title{
+    font-size: 20px;
+}
+.confirmation-text{
+     color: var(--font-primary-color);
+    font-size: 9px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
-    .container__asistencia {
-        width: 100%;
-        height: 440px;
+    .container__info,
+    .span-info {
+        width: var(--section-tablet);
     }
-
-    .span-info{
-        width: 400px;
+    main-title{
+        font-size: var(--text-info-mobile-tablet);
     }
-
-    span h2 {
-        font-size: 2.5rem;
+    span h2{
+        font-size:var(--text-tablet);
     }
-
-    span h3 {
+    .mainText{
+        font-size: 32px;
+    }
+    .subText{
         font-size: 1.5rem;
     }
-
 }
 
 
 
 @media only screen and (min-width : 1024px) {
-   
-    
+    .container__info,
+    .span-info {
+        width: var(--section-desktop);
+    }
+    main-title{
+        font-size: var(--text-info-mobile-tablet);
+    }
+    .mainText{
+        font-size: 36px;
+    }
     .subText{
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
-
-    span h3 {
-        font-size: 2.5rem;
+    .confirmation-text{
+        font-size: 1rem;
     }
-
-    span h2  {
-        font-size: 3rem;
-    }
-
     
 }
 

@@ -1,16 +1,22 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
-import Invitacion from '../views/Home.vue';
+import { createRouter, createWebHistory } from "vue-router";
+import Invitacion from "../views/Invitacion.vue";
+
 const routes=[
-    {
-        path:'/',
-        name:'Invitacion',
-        component: Invitacion
-    },
-    
+    {path:'/', name:'Invitacion', component: Invitacion},
 ];
+
 const router = createRouter({
-    history: createWebHashHistory(),
-    routes
+    history: createWebHistory(import.meta.env.BASE_URL),
+    routes,
+  scrollBehavior(to) {
+    if (to.meta.scrollTo) {
+      return {
+        el: `#${to.meta.scrollTo}`,
+        behavior: 'smooth'
+      }
+    }
+    return { top: 0 }
+  }
   });
-  
-  export default router;
+
+export default router;

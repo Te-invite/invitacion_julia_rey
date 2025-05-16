@@ -1,5 +1,5 @@
 <script>
-import florTop from '../assets/img/contenedor_2.png';
+import florTop from '../../assets/img/contenedor_2.png';
 export default {
     name:'Encabezado',
     data(){

@@ -1,6 +1,6 @@
 <script>
-import InfoSection from '../components/InfoSection.vue';
-import rama1 from '../assets/img/0003_2.webp';
+import InfoSection from '../utils/InfoSection.vue';
+import rama1 from '../../assets/img/0003_2.webp';
 export default {
     name: 'DressCode',
     components: {
